@@ -1,15 +1,17 @@
 const form =document.querySelector('form');
-const lbtn = document.querySelector('#lb');
+const lb = document.querySelector('#lb');
 
-console.log(lbtn);
+console.log(lb);
 
-// lbtn.addEventListener("click",e=>{
-//     console.log(form.uyo.value);
-//     let username = form.uyo.value;
+// lb.addEventListener("click",(e)=>{
+//     e.preventDefault()
+//     let username
+//      = form.uyo.value;
 
 //     if(username === 'admin' && form.password.value === 'pass'){
-//         // alert('yes')
 //         window.location.href = "./index2.html";
+//         console.log(username);
+
        
 //     } else {
 //         alert('nope');
@@ -18,12 +20,20 @@ console.log(lbtn);
      
 // })
 
-const logout = document.querySelector('#logoutb');
+lb.addEventListener('click',login);
 
-console.log(logout);
+function login(e){
+    e.preventDefault();
+    console.log(form.password.value)  ;
+    let username
+    = form.uyo.value;
 
-logout.addEventListener("click", e=> {
-    console.log('hi');
-    window.location.href = "./index.html";
+    if(username === 'admin' && form.password.value === 'pass'){
+      console.log(form.password.value);
+      window.location.href= './index2.html';
+    } else {
+      alert('wrong');
+    }
+  
+  }
 
-})
